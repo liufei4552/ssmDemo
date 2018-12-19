@@ -27,6 +27,8 @@ public class RedisCache implements Cache {
 
 	private final String id;
 
+
+
 	/**
 	 * The {@code ReadWriteLock}.
 	 */

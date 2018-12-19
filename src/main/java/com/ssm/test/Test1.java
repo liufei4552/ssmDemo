@@ -1,5 +1,7 @@
 package com.ssm.test;
 
+import com.ssm.utils.shiroUtile.RedisCache;
+
 /**
  * @ProjectName: ssmDemo
  * @Package: com.ssm.test
@@ -11,6 +13,7 @@ package com.ssm.test;
  */
 public class Test1 {
 	public static void main(String[] args) {
-		System.out.println();
+		RedisCache redisCache=new RedisCache("123");
+		redisCache.removeObject("user/findAllInfor");
 	}
 }

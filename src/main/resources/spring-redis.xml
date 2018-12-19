@@ -45,6 +45,7 @@
         <property name="hashValueSerializer">
             <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
         </property>
+
         <!-- 开启REIDS事务支持 -->
        <!-- <property name="enableTransactionSupport" value="true"/>-->
     </bean>
@@ -53,23 +54,10 @@
         <constructor-arg  name="redisOperations" ref="redisTemplate" />
         <!--<property name="defaultExpiration" value="${redis.expiration}" />-->
     </bean>
-    <!--<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
-        <property name="caches">
-            <set>
-                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
-                    <property name="name" value="default"/>
-                </bean>
-                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
-                    <property name="name" value="userCache"/>
-                </bean>
-            </set>
-        </property>
-    </bean>-->
     <!-- 使用中间类解决RedisCache.jedisConnectionFactory的静态注入，从而使MyBatis实现第三方缓存 -->
-    <bean id="redisCacheConfig" class="com.ssm.utils.shiroUtile.RedisCacheConfig">
+  <bean id="redisCacheConfig" class="com.ssm.utils.shiroUtile.RedisCacheConfig">
         <constructor-arg ref="jedisConnectionFactory" />
         <constructor-arg ref="redisTemplate" />
         <constructor-arg ref="redisCacheManager" />
-        <!--<constructor-arg ref="cacheManager"/>-->
     </bean>
 </beans>
