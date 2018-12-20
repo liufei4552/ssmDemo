@@ -51,8 +51,6 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.ssm.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-
-
         <!-- 实现到的抽象方法 -->
         <!-- <property name="annotationClass" value="org.springframework.stereotype.Repository"></property> -->
     </bean>
@@ -67,19 +65,4 @@
     </bean>
     <!-- 开启事务注解，标注@Transactional的类和方法将具有事务性 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <!--sesion设置-->
-    <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
-        <property name="maxInactiveIntervalInSeconds" value="3600"></property>
-    </bean>
-    <!--session共享-->
-    <!--redis连接池-->
-   <!-- <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig"/>-->
-    <!--redis连接工厂-->
-   <!-- <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-        <property name="hostName" value="127.0.0.1"/>
-        <property name="port" value="6379"/>
-        <property name="password" value="root123456"/>
-        <property name="timeout" value="20000"/>
-        <property name="poolConfig" ref="poolConfig"></property>
-    </bean>-->
 </beans>

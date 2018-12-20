@@ -12,7 +12,7 @@
     <%=session.getId()%>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="user/login.do" method="post">
         用户名:<input type="text" name="account">
         密码:<input type="password" name="pass">
         <input type="submit" value="登录">

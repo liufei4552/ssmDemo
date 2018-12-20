@@ -40,4 +40,12 @@ public interface UserDao {
 	* @return int
 	**/
 	public int deleInfor(int id);
+	/**
+	* @Author LiuFei
+	* @Description  登录验证
+	* @Date 16:42 2018/12/20
+	* @Param [user]
+	* @return int
+	**/
+	public int login(User user);
 }

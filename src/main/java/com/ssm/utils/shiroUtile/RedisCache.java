@@ -135,7 +135,7 @@ public class RedisCache implements Cache {
 			result = connection.expire(serializer.serialize(key), 0);
 			logger.info("从Redis内存数据库中删除Key:" + key + "的数据");
 		} catch (JedisConnectionException e) {
-			e.printStackTrace();
+			System.out.println("key值不存在！");
 		} finally {
 			if (connection != null) {
 				connection.close();

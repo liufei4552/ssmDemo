@@ -14,4 +14,7 @@
     <delete id="deleInfor" parameterType="int">
         DELETE FROM user WHERE id=#{id};
     </delete>
+    <select id="login" parameterType="com.ssm.bean.User" resultType="int">
+        SELECT count(*) FROM user WHERE username=#{username} AND password=#{password};
+    </select>
 </mapper>
